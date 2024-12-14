@@ -3,16 +3,32 @@
     <title>Aarons First Game</title>
     <style>
       div{display: inline-block; height: 100vh;
-          width: 50vw; align-content: center; text-align: center;}
+          align-content: center; text-align: center;}
      </style>
+     <script>
+          Act=(name,latin,me,other)=>{
+          prompt('What is the scientific name of the '+name).toLowerCase()==latin?
+          (
+            alert("Thats right"),
+            me.style.width=me.style.width=+me.style.width.slice(0,2)+5+"vw",
+            other.style.width=other.style.width=+other.style.width.slice(0,2)-5+"vw"
+          )
+          :
+          (
+            alert("Erm, actually it is "+latin),
+            me.style.width=me.style.width=+me.style.width.slice(0,2)-5+"vw",
+            other.style.width=other.style.width=+other.style.width.slice(0,2)+5+"vw"
+          )
+          }
+     </script>
   </head>
   <body style="font-size: 130px; width: 100vw; margin: 0;"
   id="MainText">
-    <div id="Wolf" style="color: grey; background: beige;"
-    onclick="prompt('What is the scientific name of the wolf')">
+    <div id="Wolf" style="width: 50vw; color: grey; background: beige;"
+    onclick="Act('wolf','canis lupus',Wolf,Lion)">
       <span id="InnerWolf" style="margin: auto;">Wolf</span>
-    </div><div id="Lion" style="color: beige;background: grey;"
-    onclick="prompt('What is the')">
+    </div><div id="Lion" style="width: 50vw; color: beige;background: grey;"
+    onclick="Act('lion','panthera leo',Lion,Wolf)">
       <span id="InnerLion">Lion</span>
     </div>
   </body>
